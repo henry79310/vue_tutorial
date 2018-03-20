@@ -1,0 +1,491 @@
+.bg-animate {
+    position: relative;
+    top: 0;
+    left: 0;
+    width: 100%;
+    pointer-events: none;
+    // min-height: 600px;
+    #scene {
+        height: 600px;
+        width: 100%;
+    }
+    .same {
+        position: absolute;
+        pointer-events: none;
+        filter: drop-shadow(0 40px 4px rgba(50, 50, 50, 0.1));
+        width: 150px;
+        img {
+            width: 100%;
+        }
+    }
+    .cloud {
+        @extend .same;
+        bottom: 40%;
+        left: 11%;
+    }
+    .snow {
+        @extend .same;
+        width: 90px;
+        left: 0;
+        top: 10%;
+    }
+    .ball {
+        @extend .same;
+        left: 7%;
+        bottom: 17%;
+        width: 30px;
+    }
+    .lightning {
+        @extend .same;
+        left: 40%;
+        top: 5%;
+    }
+    .pathcloud {
+        @extend .same;
+        right: 0;
+        top: 16%;
+        width: 130px;
+    }
+    .plan {
+        @extend .same;
+        right: -18%;
+        bottom: 37%;
+        width: 70px;
+    }
+    .rain {
+        @extend .same;
+        left: 10%;
+        top: 35%;
+        width: 120px;
+    }
+    .sun {
+        @extend .same;
+        left: 50%;
+        bottom: 40%;
+    }
+    .tr {
+        @extend .same;
+        left: -120%;
+        top: 50%;
+        width: 50px;
+    }
+    .tr-b {
+        @extend .same;
+        left: -124%;
+        bottom: 20%;
+        width: 50px;
+    }
+}
+
+.line {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    // @include transform-display(translateY(-50%) translateX(-50%));
+}
+
+
+/*================================== index type1 - kv ===========================================*/
+
+.kv-container {
+    position: relative;
+    height: 35em;
+    .kv-title,
+    .kv-sun,
+    .kv-cloud1,
+    .kv-cloud2,
+    .kv-star,
+    .kv-icon1,
+    .kv-icon2,
+    .kv-tree1,
+    .kv-tree2,
+    .kv-calendar,
+    .kv-location,
+    .kv-car,
+    .kv-robot1,
+    .kv-robot2,
+    .kv-robot3,
+    .kv-robot4,
+    .kv-man1,
+    .kv-man2,
+    .kv-man3,
+    .kv-woman1,
+    .kv-woman2,
+    .kv-man-bike,
+    .kv-woman-bike1,
+    .kv-woman-bike2 {
+        position: absolute;
+        background-size: contain;
+        background-repeat: no-repeat;
+        background-position: center center;
+    }
+    .kv-title {
+        background-image: url("/dist/img/home/kv/title.svg");
+        width: 100%;
+        height: 25em;
+        bottom: 1em;
+        left: 0;
+    }
+    .kv-sun {
+        background-image: url("/dist/img/home/kv/sun.svg");
+        width: 110px;
+        height: 120px;
+        top: 0;
+        right: 28%;
+        // animation: kv-sun 10s linear infinite;
+    }
+    .kv-cloud1 {
+        background-image: url("/dist/img/home/kv/cloud1.svg");
+        width: 85px;
+        height: 70px;
+        top: 0;
+        right: 45%;
+        animation: kv-cloud1 2s linear infinite;
+    }
+    .kv-cloud2 {
+        background-image: url("/dist/img/home/kv/cloud2.svg");
+        width: 40px;
+        height: 30px;
+        top: 5em;
+        left: 40%;
+        animation: kv-cloud2 2s linear infinite;
+    }
+    .kv-star {
+        background-image: url("/dist/img/home/kv/star.svg");
+        width: 45px;
+        height: 55px;
+        top: -1em;
+        left: 40%;
+        // animation: kv-star 2s linear infinite;
+    }
+    .kv-icon1 {
+        background-image: url("/dist/img/home/kv/icon1.svg");
+        width: 60px;
+        height: 50px;
+        top: 13em;
+        left: 18%;
+        // animation: kv-icon1 2s linear infinite;
+    }
+    .kv-icon2 {
+        background-image: url("/dist/img/home/kv/icon2.svg");
+        width: 60px;
+        height: 60px;
+        top: 6em;
+        left: 22%;
+        // animation: kv-icon2 2s linear infinite;
+    }
+    .kv-tree1 {
+        background-image: url("/dist/img/home/kv/tree1.svg");
+        width: 80px;
+        height: 75px;
+        top: 19em;
+        left: 19%;
+        // animation: kv-tree1 2s linear infinite;
+    }
+    .kv-tree2 {
+        background-image: url("/dist/img/home/kv/tree2.svg");
+        width: 80px;
+        height: 75px;
+        bottom: 14em;
+        right: 19%;
+        // animation: kv-tree2 2s linear infinite;
+    }
+    .kv-calendar {
+        background-image: url("/dist/img/home/kv/calendar.svg");
+        width: 45px;
+        height: 70px;
+        top: 0em;
+        left: 32%;
+        // animation: kv-calendar 2s linear infinite;
+    }
+    .kv-location {
+        background-image: url("/dist/img/home/kv/location.svg");
+        width: 58px;
+        height: 70px;
+        top: 6em;
+        right: 40%;
+        animation: kv-location 1s linear infinite;
+    }
+    .kv-car {
+        background-image: url("/dist/img/home/kv/car.svg");
+        width: 115px;
+        height: 65px;
+        bottom: 5em;
+        right: 25%;
+        // animation: kv-car 2s linear infinite;
+    }
+    .kv-robot1 {
+        background-image: url("/dist/img/home/kv/robot1.svg");
+        width: 28px;
+        height: 55px;
+        bottom: 7em;
+        right: 38%;
+        animation: kv-robot1 2s linear infinite;
+    }
+    .kv-robot2 {
+        background-image: url("/dist/img/home/kv/robot2.svg");
+        width: 45px;
+        height: 55px;
+        bottom: 12em;
+        right: 28%;
+        animation: kv-robot2 2s linear infinite;
+    }
+    .kv-robot3 {
+        background-image: url("/dist/img/home/kv/robot3.svg");
+        width: 35px;
+        height: 60px;
+        bottom: 7em;
+        right: 20%;
+        animation: kv-robot3 2s linear infinite;
+    }
+    .kv-robot4 {
+        background-image: url("/dist/img/home/kv/robot4.svg");
+        width: 25px;
+        height: 40px;
+        bottom: 4em;
+        right: 50%;
+        animation: kv-robot4 2s linear infinite;
+    }
+    .kv-man1 {
+        background-image: url("/dist/img/home/kv/man1.svg");
+        width: 25px;
+        height: 40px;
+        top: 15em;
+        left: 28%;
+        animation: kv-man1 2s linear infinite;
+    }
+    .kv-man2 {
+        background-image: url("/dist/img/home/kv/man2.svg");
+        width: 25px;
+        height: 40px;
+        top: 5em;
+        left: 46%;
+        animation: kv-man2 2s linear infinite;
+    }
+    .kv-man3 {
+        background-image: url("/dist/img/home/kv/man3.svg");
+        width: 22px;
+        height: 50px;
+        bottom: 9em;
+        left: 27%;
+        animation: kv-man3 2s linear infinite;
+    }
+    .kv-woman1 {
+        background-image: url("/dist/img/home/kv/woman1.svg");
+        width: 25px;
+        height: 50px;
+        bottom: 3em;
+        right: 43%;
+        animation: kv-woman1 2s linear infinite;
+    }
+    .kv-woman2 {
+        background-image: url("/dist/img/home/kv/woman2.svg");
+        width: 25px;
+        height: 40px;
+        top: 15em;
+        left: 45%;
+        // animation: kv-woman2 2s linear infinite;
+    }
+    .kv-man-bike {
+        background-image: url("/dist/img/home/kv/man-bike.svg");
+        width: 58px;
+        height: 60px;
+        top: 11em;
+        left: 32%;
+        animation: kv-man-bike 1s linear infinite;
+    }
+    .kv-woman-bike1 {
+        background-image: url("/dist/img/home/kv/woman-bike1.svg");
+        width: 35px;
+        height: 55px;
+        top: 8em;
+        right: 37%;
+        animation: kv-woman-bike1 2s linear infinite;
+    }
+    .kv-woman-bike2 {
+        background-image: url("/dist/img/home/kv/woman-bike2.svg");
+        width: 35px;
+        height: 45px;
+        bottom: 0em;
+        left: 37%;
+        animation: kv-woman-bike2 1.5s linear infinite;
+    }
+    // @keyframes kv-sun {
+    //     0% {
+    //         transform: rotate(0deg);
+    //     }
+    //     100% {
+    //         transform: rotate(360deg);
+    //     }
+    // }
+    @keyframes kv-cloud1 {
+        0% {
+            right: 45%;
+        }
+        50% {
+            right: 44%;
+        }
+        100% {
+            right: 45%;
+        }
+    }
+    @keyframes kv-cloud2 {
+        0% {
+            left: 40%;
+        }
+        50% {
+            left: 41%;
+        }
+        100% {
+            left: 40%;
+        }
+    }
+    @keyframes kv-location {
+        0% {
+            top: 6em;
+        }
+        50% {
+            top: 5em;
+        }
+        100% {
+            top: 6em;
+        }
+    }
+    @keyframes kv-robot1 {
+        0% {
+            transform-origin: center bottom;
+            transform: rotate(0deg);
+        }
+        50% {
+            transform-origin: center bottom;
+            transform: rotate(15deg);
+        }
+        100% {
+            transform-origin: center bottom;
+            transform: rotate(0deg);
+        }
+    }
+    @keyframes kv-robot2 {
+        0% {
+            transform-origin: center bottom;
+            transform: rotate(10deg);
+        }
+        50% {
+            transform-origin: center bottom;
+            transform: rotate(0deg);
+        }
+        100% {
+            transform-origin: center bottom;
+            transform: rotate(10deg);
+        }
+    }
+    @keyframes kv-robot3 {
+        0% {
+            transform-origin: center bottom;
+            transform: rotate(10deg);
+        }
+        50% {
+            transform-origin: center bottom;
+            transform: rotate(0deg);
+        }
+        100% {
+            transform-origin: center bottom;
+            transform: rotate(10deg);
+        }
+    }
+    @keyframes kv-man1 {
+        0% {
+            top: 15em;
+            left: 28%;
+        }
+        50% {
+            top: 14.5em;
+            left: 29%;
+        }
+        100% {
+            top: 15em;
+            left: 28%;
+        }
+    }
+    @keyframes kv-woman1 {
+        0% {
+            bottom: 3em;
+            right: 43%;
+        }
+        50% {
+            bottom: 3.5em;
+            right: 44%;
+        }
+        100% {
+            bottom: 3em;
+            right: 43%;
+        }
+    }
+    @keyframes kv-man-bike {
+        0% {
+            top: 11em;
+            left: 32%;
+        }
+        50% {
+            top: 10.5em;
+            left: 33.5%;
+        }
+        100% {
+            top: 11em;
+            left: 32%;
+        }
+    }
+    @keyframes kv-woman-bike2 {
+        0% {
+            bottom: 0em;
+            left: 37%;
+        }
+        50% {
+            bottom: .5em;
+            left: 38%;
+        }
+        100% {
+            bottom: 0em;
+            left: 37%;
+        }
+    }
+}
+
+
+/*================================== END index type1 - kv ===========================================*/
+
+/* ====================     For Vue-Router      =======================**/
+[v-cloak] {
+    display: none;
+}
+.fade-enter-active, .fade-leave-to {
+    transition-property: opacity;
+    transition-duration: .07s;
+}
+
+.fade-enter-active {
+    transition-delay: .07s;
+}
+
+.fade-enter, .fade-leave-to  {
+    opacity: 0
+}
+
+.child-view {
+    transition: all .05s cubic-bezier(.55,0,.1,1);
+} 
+
+
+.slide-left-enter, .slide-right-leave-to {
+    opacity: 0;
+    -webkit-transform: translate(30px, 0);
+    transform: translate(30px, 0);
+}
+.slide-left-leave-to, .slide-right-enter {
+    opacity: 0;
+    -webkit-transform: translate(-30px, 0);
+    transform: translate(-30px, 0);
+} 

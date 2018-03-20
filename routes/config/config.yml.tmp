@@ -1,0 +1,101 @@
+# server port
+port: 3000 
+baseUrl: /webapi
+# request to social media websits.
+proxy: http://proxy2.cwb.gov.tw:8888
+#static file directory
+staticFileDirectory: 
+  webPrefix: public
+  pagePrefix: public/dist
+  docPrefix: ../opendatadoc
+# for preview dataset metadata page
+retrievalApi: 
+  url: http://opendata.cwb.gov.tw/api/v1/rest/datastore/
+
+mysql: 
+  database: opendatadb
+  host: 127.0.0.1
+  username: chris
+  password: z20339
+  connectionLimit: 10
+  waitForConnections: true
+  queueLimit: 0
+
+
+
+#  user login session.
+jsonWebToken: 
+  tokenType: Bearer
+  secret: cwbopendataplatform
+  refreshTokenInTime: 3000
+  expiredTokenOnTime: 3600
+
+# user login recaptcha token
+recaptcha: 
+  verifyURL: https://www.google.com/recaptcha/api/siteverify
+  secretKey: 6Le0bEsUAAAAAHYR52KgEhsZyZQIqgpOPCYIEE5X
+
+authorizationKey: 
+  # generate authorization key prefix ex. cwb-xxx-xxxxxx-xxx
+  genPrefix: cwb
+  # cnnot update authorization key after already done in 7 days
+  forbiddenDays: 7
+  rdec: rdec-key-123-45678-011121314
+
+
+# user login authorize to cwb webservice.
+cwbSoapWebservice:
+  userCheckUrl: http://ws.cwb.gov.tw/axis/services/CWBMEMBERSoap?wsdl
+  userCheckParam0: in0
+  userCheckParam1: in1
+  userCheckResponse: $value
+
+# social media Auth2 
+socialMediaWebservice: 
+  facebook: 
+    api_key: 167486190685780
+    api_secret: 7248684a919e2e6db34dd78cf6e5a582
+    callback_url: http://127.0.0.1:3000/webapi/auth/facebook/callback
+    # when cwb webservice post fail, save userid info to the local disk.
+    userid_path: /data/project/iisi/opendata/execute/opendataRetrievalApi/log/facebookUserid.log
+
+
+dataset:  
+  perpagesize: 5
+  statistic:
+    statisticAll: statistic_all
+    statisticAllKey: statisticAll
+    # statistic in 30 days 
+    statisticDays: statistic_days
+    beforeDays: 30
+    statisticDaysKey: statisticDays
+    # search pattern maximum
+  searchMax: 5
+  type: 
+    - F
+    - O
+    - E
+    - C
+    - W
+    - M
+    - A
+  # home page give top 10.
+  topDownload: 10
+  SC:
+    - E-A0014-001
+    - E-A0015-001
+    - E-A0016-001
+news:
+  perpagesize: 5
+  daysThreshold: 7
+
+
+logger: 
+  infoName: info-file
+  infoPath: /data/project/iisi/opendata/execute/opendataRetrievalApi/log/web-info.log
+  errorName: error-file
+  errorPath: /data/project/iisi/opendata/execute/opendataRetrievalApi/log/web-error.log
+  # frontend error send back to serverend
+  errorClientName: client-error-file
+  errorClientPath: /data/project/iisi/opendata/execute/opendataRetrievalApi/log/web-client.error.log
+  
