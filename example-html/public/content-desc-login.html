@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<!--[if IE 8]> <html lang="zh-tw" class="ie8"> <![endif]-->
+<!--[if IE 9]> <html lang="zh-tw" class="ie9"> <![endif]-->
+<!--[if !IE]><!-->
+<html lang="zh-tw">
+<!--<![endif]-->
+
+<head>
+    <title>example-html</title>
+    <!-- Meta -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+
+    <!-- CSS Global Compulsory -->
+    <link rel="stylesheet" href="/assets/plugins/bootstrap/css/bootstrap.min.css">
+    <!-- CSS Implementing Plugins -->
+    <link rel="stylesheet" href="/assets/plugins/font-awesome/css/font-awesome.min.css">
+    <link rel="stylesheet" href="/assets/plugins/open-icons/style.css">
+    <!--<link rel="stylesheet" href="assets/plugins/open-icons2/style.css">-->
+
+    <!-- CSS For Develop -->
+    <link rel="stylesheet" href="/assets/css/main.css">
+</head>
+
+<body> 
+       
+        <!-- ====== header & content    ====== -->
+        <main id="content" v-cloak>
+            <!-- breadcrumbs -->
+            <div class="breadcrumbs" id="topicAnchor">
+                <div class="container">
+                    <ul class="breadcrumb">
+                        <li><a href="/index"><i class="icon-home"></i></a></li>
+                        <i class="fa fa-angle-right" aria-hidden="true"></i>
+                        <li><a href="/content-desc.html">開發指南</a></li>
+                        <i class="fa fa-angle-right" aria-hidden="true"></i>
+                        <li class="active">使用說明</li>
+                    </ul>
+                </div>
+                <!--/container-->
+            </div>
+            <!-- end breadcrumbs -->
+            <div class="container">
+                <div class="row">
+                    <!-- Begin Sidebar Menu -->
+                    <div class="col-md-3">
+                        <ul class="list-group sidebar-nav-v1" id="sidebar-nav">
+                            <!-- 資料清單 -->
+                            <li class="list-group-item active">
+                                <a href="/content-desc.html">使用說明</a>
+                            </li>
+                            <li class="list-group-item">
+                                <a href="/content-rules.html">使用規範</a>
+                            </li>
+                            <!-- End 資料清單 -->
+                        </ul>
+                     </div>
+                    <!-- End Sidebar Menu -->
+                    <div class="col-md-9">
+                        <div class="row">
+                            <!-- headline -->
+                            <div class="col-md-12">
+                                <div class="headline-v1 margin-bottom-55">
+                                  <h2>使用說明</h2>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- end headline -->
+                        <!-- main content -->
+                        <div class="row context-box">
+                            <div class="col-md-12">
+                                <p>中央氣象局開放資料平臺提供各式資料，為能優化開放資料的服務，本平臺採用會員服務機制，可使用中央氣象局氣象會員之帳號或透過facebook登入。民眾或機關可在登入本平臺後透過網頁連結下載資料，也可發展程式介接進行檔案下載或資料擷取。</p>
+                                
+                                <h4 class="idet">1.授權碼取得</h4>
+
+                                <p class="idet2 loged-in">
+                                    <div class="idet2">
+                                        <a href="#getUserAuthkeyAnchor" class="btn-u btn-u-blue rounded" id="getUAuthkey">授權碼取得</a> 
+                                        <a class="idet2" style='color:red;font-size:20px;pointer-events:none'></a>
+                                    </div>
+                                </p>        
+                                <p class="idet2 loged-in">
+                                    <div class="idet2">
+                                        <a href="/webapi/userLogout" class="btn-u btn-u-blue rounded" id="getUAuthkey">LOGOUT</a> 
+                                        <a class="idet2" style='color:blue;font-size:20px;pointer-events:none'></a>
+                                    </div>
+                                </p>                        
+                                <p>※請留意若某一電子郵件已註冊過氣象會員，再以相同郵件帳號透過facebook登入本平臺，將會取得相同之授權碼，若點選上方更新授權碼也會同步影響兩種登入方式可取得之授權碼。</p>
+                
+                                
+                            </div>
+                        </div>
+                        <!--end main content -->
+                    </div>
+                </div>
+            </div>
+        </main>
+        <!-- ======end content ====== -->
+        
+        <!-- footer -->
+        <footer id="footer-v3" class="footer-v3">
+            <div class="copyright ">
+                <div class="container ">
+                    <div class="row ">
+                        <!-- link Info -->
+                        <div class="col-md-12 ">
+                            <p class="link ">
+                                <a target="_blank " href="https://www.cwb.gov.tw/V7/index.htm" >中央氣象局</a> |
+                                <a target="_blank " href="https://www.cwb.gov.tw/V7/private.htm">隱私權保護政策</a> |
+                                <a target="_blank " href="https://www.cwb.gov.tw/V7/private.htm">資訊安全政策</a>
+                            </p>
+                        </div>
+                        <!-- End link Info-->
+                        <!-- Address -->
+                        <address class="col-md-12 ">
+                            <p>地址：10048臺北市中正區公園路64號<br class="visible-xs ">
+                            總機：(02)2349-1000(代表號)<br class="visible-xs ">
+                            氣象查詢：(02)2349-1234    地震查詢：(02)2349-1168<br class="visible-xs ">
+                            請使用1024*768px螢幕解析度獲得最佳網頁瀏覽環境</p>
+                        </address>
+                        <!-- End Address -->
+                    </div>
+                </div>
+            </div>
+        </footer>
+        <!--end footer -->
+
+    <!-- JS Global Compulsory -->
+    <script type="text/javascript" src="/assets/plugins/jquery/jquery.min.js"></script>
+    <script type="text/javascript" src="/assets/plugins/bootstrap/js/bootstrap.min.js"></script>
+    <!-- JS Customization -->
+    <!-- <script src="/dist/content.js"></script> -->
+    <script type="text/javascript">
+        /*document.getElementById("Line_mobile_Btn").onclick = function() {
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                         }*/
+    </script>
+
+
+    <!--[if lt IE 9]>
+    <script src="/assets/plugins/respond.js"></script>
+    <script src="/assets/plugins/html5shiv.js"></script>
+    <script src="/assets/plugins/placeholder-IE-fixes.js"></script>
+<![endif]-->
+    <!-- JS For Develop -->
+    <script src="/content.js"></script>
+</body>
+
+</html>

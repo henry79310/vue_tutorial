@@ -41,21 +41,28 @@ var compiler = webpack(webpackDevConfig);
 app.use(webpackHotMiddleware(compiler)); 
 
 
-/********    WEBPACK  HOT RELOAD  *******/
+/********    WEBPACK  HOT RELOAD END  *******/
 
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(serveStatic(config.staticFileDirectory.webPrefix));
 app.use(serveStatic(config.staticFileDirectory.pagePrefix));
 
+/****  template html   ***/
+app.use('/devManual/decontent-desc.html', express.static(__dirname + '/public/content-desc.html'));
+app.use('/devManual/content-rules.html', express.static(__dirname + '/public/content-rules.html'));
+
+/****  Vue component template ****/
+
+
+/***   Vue router  template  ***/
 app.use('/devManual/*', express.static(indexPagePath));
 app.use('/devManual', express.static(indexPagePath));
-
-app.use(config.baseUrl, datasetRouter);
+/* app.use(config.baseUrl, datasetRouter); */
 
 
 /** handle error */
 app.use(function(err, req, res, next) {
- 
+    console.log(err);
     logger.error(err);
     res.json({ success: false, message: 'error' });
     

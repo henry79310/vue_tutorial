@@ -1,0 +1,108 @@
+@font-face {
+  font-family: 'icomoon';
+  src:  url('fonts/icomoon.eot?nf7cua');
+  src:  url('fonts/icomoon.eot?nf7cua#iefix') format('embedded-opentype'),
+    url('fonts/icomoon.ttf?nf7cua') format('truetype'),
+    url('fonts/icomoon.woff?nf7cua') format('woff'),
+    url('fonts/icomoon.svg?nf7cua#icomoon') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+
+[class^="icon-"], [class*=" icon-"] {
+  /* use !important to prevent issues with browser extensions that change fonts */
+  font-family: 'icomoon' !important;
+  speak: none;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+
+  /* Better Font Rendering =========== */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.icon-API:before {
+  content: "\e900";
+}
+.icon-CAP:before {
+  content: "\e901";
+}
+.icon-climate:before {
+  content: "\e902";
+}
+.icon-csv:before {
+  content: "\e903";
+}
+.icon-cwb-logo-b:before {
+  content: "\e904";
+  color: #384b88;
+}
+.icon-cwb-logo-w:before {
+  content: "\e905";
+  color: #fff;
+}
+.icon-download:before {
+  content: "\e906";
+}
+.icon-email:before {
+  content: "\e907";
+}
+.icon-forecast:before {
+  content: "\e908";
+}
+.icon-GRIB2:before {
+  content: "\e909";
+}
+.icon-home:before {
+  content: "\e90a";
+}
+.icon-JSON:before {
+  content: "\e90b";
+}
+.icon-KML:before {
+  content: "\e90c";
+}
+.icon-KMZ:before {
+  content: "\e90d";
+}
+.icon-line:before {
+  content: "\e90e";
+}
+.icon-lock:before {
+  content: "\e90f";
+}
+.icon-number-forecast:before {
+  content: "\e910";
+}
+.icon-observe:before {
+  content: "\e911";
+}
+.icon-open-logo-b:before {
+  content: "\e912";
+  color: #384b88;
+}
+.icon-open-logo-w:before {
+  content: "\e913";
+  color: #fff;
+}
+.icon-printer:before {
+  content: "\e914";
+}
+.icon-search:before {
+  content: "\e915";
+}
+.icon-tsunami:before {
+  content: "\e916";
+}
+.icon-warning:before {
+  content: "\e917";
+}
+.icon-XML:before {
+  content: "\e918";
+}
+.icon-ZIP:before {
+  content: "\e919";
+}

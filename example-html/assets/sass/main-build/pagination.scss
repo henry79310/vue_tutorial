@@ -1,0 +1,38 @@
+//pagination
+
+.pagination-v1 > li:first-child > a,
+.pagination-v1 > li:first-child > span,
+.pagination >li:last-child > a,
+.pagination >li:last-child > span {
+  @include border-radius(100%);
+}
+.pagination-v1{
+  li {
+    a {
+    color: $base-black;
+    @include border-radius(100%);
+    width: 30px;
+    height: 30px;
+    line-height: 30px;
+    padding: 0px;
+    margin: auto 1px;
+    border: 1px soild $base-blue;
+    text-align: center;
+
+    &:hover {
+       color: #fff;
+       border-color: $base-blue;
+       background-color: $base-blue;
+     }
+    }
+  }
+}
+.pagination-v1 > .active > a,
+.pagination-v1 > .active > span,
+.pagination-v1 > .active > a:hover,
+.pagination-v1 > .active > span:hover,
+.pagination-v1 > .active > a:focus,
+.pagination-v1 > .active > span:focus {
+  border-color: $base-blue;
+  background-color: $base-blue;
+}
