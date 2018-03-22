@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<!--[if IE 8]> <html lang="zh-tw" class="ie8"> <![endif]-->
+<!--[if IE 9]> <html lang="zh-tw" class="ie9"> <![endif]-->
+<!--[if !IE]><!-->
+<html lang="zh-tw">
+<!--<![endif]-->
+
+<head>
+    <title></title>
+    <!-- Meta -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+
+    <!-- CSS Global Compulsory -->
+    <link rel="stylesheet" href="/dist/plugins/bootstrap/css/bootstrap.min.css">
+    <!-- CSS Implementing Plugins -->
+    <link rel="stylesheet" href="/dist/plugins/font-awesome/css/font-awesome.min.css">
+    <link rel="stylesheet" href="/dist/plugins/open-icons/style.css">
+    <!--<link rel="stylesheet" href="assets/plugins/open-icons2/style.css">-->
+
+    <!-- CSS For Develop -->
+    <link rel="stylesheet" href="/dist/main.css">
+</head>
+
+<body> 
+       
+    <div class="row">
+        <!-- ====== header & content    ====== -->
+        <router-view></router-view>
+        <!-- ======end content ====== -->
+        
+        <!-- footer -->
+        <footer id="footer-v3" class="footer-v3">
+            <footer-component></footer-component>
+        </footer>
+        <!--end footer -->
+        <!-- 會員登入 -->
+        <div class="modal fade " id="userLogin" tabindex="-1 " role="dialog " aria-labelledby="myModalLabel " aria-hidden="true ">
+            <user-login-component></user-login-component>
+        </div>
+        <!--ＥＮＤ 會員登入 -->
+    </div>
+    <!-- JS Global Compulsory -->
+    <!--<script type="text/javascript" src="assets/plugins/jquery/jquery.min.js"></script>-->
+    <!--<script type="text/javascript" src="assets/plugins/bootstrap/js/bootstrap.min.js"></script>-->
+    <!-- JS Customization -->
+    <!-- <script src="/dist/content.js"></script> -->
+    <script type="text/javascript">
+        /*document.getElementById("Line_mobile_Btn").onclick = function() {
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                window.open('line://msg/text/' + encodeURIComponent("網站上線正式網址"), "_blank", "toolbar=yes,location=yes,directories=no,status=no, menubar=yes,scrollbars=yes,resizable=no, copyhistory=yes,width=600,height=400")
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                      }*/
+    </script>
+
+
+    <!--[if lt IE 9]>
+    <script src="/dist/plugins/respond.js"></script>
+    <script src="/dist/plugins/html5shiv.js"></script>
+    <script src="/dist/plugins/placeholder-IE-fixes.js"></script>
+<![endif]-->
+    <!-- JS For Develop -->
+    <script src="/dist/content.js"></script>
+</body>
+
+</html>

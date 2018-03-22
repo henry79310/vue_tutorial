@@ -1,4 +1,11 @@
-example-html/node_modules/
 node_modules/
-public/dist/
-package-lock.json
+example-html/node_modules/
+example-vue-component/node_modules/
+example-vue-router/node_modules/
+
+example-vue-component/public/dist/
+example-vue-router/public/dist/
+
+example-html/package-lock.json
+example-vue-component/package-lock.json
+example-vue-router/package-lock.json

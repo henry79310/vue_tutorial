@@ -1,0 +1,8 @@
+# server port
+port: 3000 
+baseUrl: /webapi
+
+#static file directory
+staticFileDirectory: 
+  webPrefix: public
+  pagePrefix: public/dist

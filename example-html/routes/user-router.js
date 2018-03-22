@@ -1,4 +1,5 @@
 const express = require('express');
+
 const router = express.Router();
 
 
@@ -13,7 +14,12 @@ router.get('/userLogout',function(req,res){
 });
 
 router.get('/userAuthkey',function(req, res){
-    res.json({sucess:true, data:'CWB-XXX-XXX-XXX'});
+    var cookie = req.cookies;
+    if(cookie.Authorization){
+        res.json({success:true, data:'CWB-XXX-XXX-XXX'});
+    }else{
+        res.json({success:false, msg:'error'});
+    }
 });
 
 
