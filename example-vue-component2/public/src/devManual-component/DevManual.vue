@@ -1,0 +1,99 @@
+<template>
+    <div class="wrapper">
+        <main>
+            <!-- breadcrumbs -->
+            <div class="breadcrumbs" id="topicAnchor">
+                <div class="container">
+                    <ul class="breadcrumb">
+                        <li><a href="/index"><i class="icon-home"></i></a></li>
+                        <i class="fa fa-angle-right" aria-hidden="true"></i>
+                        <li><a href="">開發指南</a></li>
+                        <i class="fa fa-angle-right" aria-hidden="true"></i>
+                        <li class="active">{{pageTypeName}}</li>
+                    </ul>
+                </div>
+                <!--/container-->
+            </div>
+            <!-- end breadcrumbs -->
+            <div class="container">
+                <div class="row">
+                    <!-- Begin Sidebar Menu -->
+                    <dev-manual-sidebar-component v-bind:pagetype="pageType" v-on:changedevmanualpage="changeDevManualPage"></dev-manual-sidebar-component>
+                    <!-- End Sidebar Menu -->
+
+                    <dev-manual-description-component v-show="pageType === 'description'" v-bind:userloginstatus="userLoginStatus"></dev-manual-description-component>
+                    <dev-manual-rules-component v-show="pageType === 'rules'"></dev-manual-rules-component>
+
+                </div>
+            </div>
+        </main>
+        <!-- footer -->
+        <footer id="footer-v3" class="footer-v3">
+            <footer-component></footer-component>
+        </footer>
+        <!--end footer -->
+        <!-- 會員登入 -->
+        <div class="modal fade " id="userLogin" tabindex="-1 " role="dialog " aria-labelledby="myModalLabel " aria-hidden="true ">
+            <user-login-component v-on:userlogin="userLogin"></user-login-component>
+        </div>
+        <!--ＥＮＤ 會員登入 -->
+    </div>
+
+</template>
+<script>
+
+import devManualSidebarComponent from './DevManual-sidebar.vue'
+import devManualDescriptionComponent from './DevManual-description.vue'
+import devManualRulesComponent from './DevManual-rules.vue'
+
+import userLoginComponent from '../user-login-component/User-login.vue'
+
+import footerComponent from '../footer-component/Footer.vue'
+
+
+const pagesType = [{ type: 'description', typeName: '使用說明' },
+        { type: 'rules', typeName: '使用規範' }];
+
+
+export default {
+    data: function(){
+        return {
+            pageType: '',
+            userLoginStatus:false
+        }
+    },
+    computed:{
+        pageTypeName:function(){
+            for(let i = 0; i < pagesType.length; i++){
+                if(pagesType[i].type === this.pageType){
+                    return pagesType[i].typeName;
+                }
+            } 
+        }
+    },
+    components: {
+        'dev-manual-sidebar-component': devManualSidebarComponent,
+        'dev-manual-description-component': devManualDescriptionComponent,
+        'dev-manual-rules-component': devManualRulesComponent,
+        'user-login-component':userLoginComponent,
+        'footer-component':footerComponent
+    },
+    methods:{
+        changeDevManualPage:function(pagetype){
+            this.pageType = pagetype;
+        },
+        userLogin:function(userLoginStatus){
+            console.log(userLoginStatus);
+            this.userLoginStatus = userLoginStatus;
+        }
+    },
+    created:function(){
+        this.pageType = 'description';
+        console.log(document.cookie);
+
+        if(document.cookie){
+            console.log('sgsdfg');
+        }
+    }
+}
+</script>
