@@ -2,16 +2,25 @@ node_modules/
 package-lock.json
 
 example-html/node_modules/
+example-html/package-lock.json
+
 example-vue-component1/node_modules/
 example-vue-component2/node_modules/
-example-vue-router/node_modules/
-
+example-vue-component3/node_modules/
+example-vue-component4/node_modules/
 example-vue-component1/public/dist/
 example-vue-component2/public/dist/
-example-vue-router/public/dist/
-
-example-html/package-lock.json
+example-vue-component3/public/dist/
+example-vue-component4/public/dist/
 example-vue-component1/package-lock.json
 example-vue-component2/package-lock.json
+example-vue-component3/package-lock.json
+example-vue-component4/package-lock.json
 
-example-vue-router/package-lock.json
+
+example-vue-router2/node_modules/
+example-vue-router3/node_modules/
+example-vue-router2/public/dist/
+example-vue-router3/public/dist/
+example-vue-router2/package-lock.json
+example-vue-router3/package-lock.json

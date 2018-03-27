@@ -1,0 +1,195 @@
+@mixin ovr-transition($t1, $t2) {
+  -o-transition: $t1, $t2;
+  -webkit-transition: $t1, $t2;
+  -moz-transition: $t1, $t2;
+  transition: $t1, $t2;
+}
+// ------ 圓角
+@mixin border-radius ($radius) {
+  -ms-border-radius: $radius;
+  -moz-border-radius: $radius;
+  -webkit-border-radius: $radius;
+  border-radius: $radius;
+}
+// ------ 漸層
+@mixin gradient-effect($from, $to) {
+  background: -webkit-linear-gradient($from, $to);
+  background: -moz-linear-gradient($from, $to);
+  background: -ms-linear-gradient($from, $to);
+  background: -o-linear-gradient($from, $to);
+  background: linear-gradient($from, $to);
+  -pie-background: linear-gradient($from, $to);
+}
+// ------ 區塊陰影
+@mixin shadow($shadow) {
+  -webkit-box-shadow: ($shadow);
+  -ms-box-shadow: ($shadow);
+  box-shadow: ($shadow);
+}
+// ------ 漸變時間差
+@mixin transition-animate($transition) {
+  -webkit-transition: $transition;
+  -moz-transition: $transition;
+  -o-transition: $transition;
+  -ms-transform: $transition;
+  transition: $transition;
+}
+// ------ 變形屬性
+@mixin transform-display($transform) {
+  -moz-transform: ($transform);
+  -webkit-transform: ($transform);
+  -o-transform: ($transform);
+  -ms-transform: ($transform);
+  transform: ($transform);
+}
+@mixin filter-display($filter) {
+  -webkit-filter: ($filter);
+  /* Safari 6.0 - 9.0 */
+  filter: $filter;
+}
+@mixin flexbox {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -moz-flex;
+  display: -ms-flexbox;
+  display: flex;
+}
+@mixin inline-flex {
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -moz-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+}
+@mixin flex($direction,$wrap) {
+  -webkit-flex-direction: $direction;
+  -moz-flex-direction: $direction;
+  -ms-flex-direction: $direction;
+  -o-flex-direction: $direction;
+  flex-direction: $direction;
+  -webkit-flex-wrap: $wrap;
+  -moz-flex-wrap: $wrap;
+  -ms-flex-wrap: $wrap;
+  -o-flex-wrap: $wrap;
+  flex-wrap: $wrap;
+}
+@mixin keyframes($animate) {
+  -webkit-animation: ($animate);
+  /* Safari 4+ */
+  -moz-animation: ($animate);
+  /* Fx 5+ */
+  -o-animation: ($animate);
+  /* Opera 12+ */
+  animation: ($animate);
+  /* IE 10+, Fx 29+ */
+}
+@mixin justify-content($layout-position,$IE-position) {
+  -webkit-justify-content: $layout-position;
+  -moz-justify-content: $layout-position;
+  -o-flex-justify-content: $layout-position;
+  -ms-flex-pack: $IE-position;
+  justify-content: $layout-position;
+}
+@mixin align-item($layout-align,$IE-align) {
+  -webkit-box-align: $IE-align;
+  -webkit-align-items: $layout-align;
+  -ms-flex-align: $IE-align;
+  align-items: $layout-align;
+}
+// ----------------   IE10 替代數值 ----------------
+// flex-start ----> start
+// flex-end ----> end
+// center ----> center
+// space-between ----> justify
+// space-around ----> distribute
+// ----------------  IE 100%滿版 替代數值 ----------------
+// -ms-flex:0 1 auto
+
+*,
+*:active,
+*:focus,
+*:hover,
+*:link,
+*:visited {
+  -o-transition: background-color 0.2s linear, border-color 0.1s linear;
+  -webkit-transition: background-color 0.2s linear, border-color 0.1s linear;
+  -moz-transition: background-color 0.2s linear, border-color 0.1s linear;
+  transition: background-color 0.2s linear, border-color 0.1s linear;
+}
+// ------ 色系 (lt:亮, dk:暗)
+@mixin clr-gold($a) {
+  color: rgba(223, 192, 135, $a);
+}
+//---gold
+$base-gold: #c69c6d;
+//---red
+$base-red: #dd0235;
+//---pink
+$base-lt-pink: #f292b3;
+$base-pink: #e87da2;
+//---sea
+$base-lt-sea: #7fd9e4;
+$base-sea: #5ebdca;
+$base-dk-sea: #95d2f0;
+//---blue
+$base-lt-blue: #c1edff;
+$base-blue: #256298;
+$base-dk-blue: #003567;
+$fb-blue:#3a559f; //facebook color
+//---green
+$base-lt-green: #8fc31f;
+$base-green: #74b904;
+$base-dk-green: #74b904;
+$line-green: #00c200; //Line color
+$base-jadegreen: #00aba0;
+//---yellow
+$base-yellow: #f3ba42;
+$base-lt-yellow: #e7ce00;
+//---orange
+$base-lt-orange: #f77e2e;
+$base-orange: #f19149;
+//---purple
+$base-lt-purple: #9a2faf;
+$base-purple: #811995;
+//---brown
+$base-lt-brown: #56200a;
+$base-brown: #3a1404;
+$base-ltr-brown: #af6943;
+//---gray
+$base-lt-gray: #eeeeee;
+$base-gray: #ddd;
+$base-dk-gray: #666666;
+//---black
+$base-lt-black: #414040;
+$base-black: #292929; // ------ 主色
+$base-dk-black: #222;
+$base-font-black: #555; //font
+// ------ 全網字級定義
+$xs-font: 15px; // ---- 內文
+$sm-font: 21px; // ---- 副標
+$md-font: 28px; // ---- 主標
+$lg-font: 36px; // ---- 大標
+$glg-font: 50px; // ---- 大標
+// ------ 自定義FontAwesome
+$icon: FontAwesome;
+$icon_2: icomoon;
+@mixin fa-icon($num, $font-face) {
+  content: $num;
+  font-family: $font-face;
+}
+/* ------- 標頭設計(字級,字距,顏色) ------- */
+@mixin heading-title($font-size, $color,$letter-spacing) {
+  font-size: $font-size;
+  letter-spacing: $letter-spacing;
+  color: $color;
+}
+
+[class*=" fa-"],
+[class^="fa-"] {
+  font-family: $icon !important;
+}
+@import url(https://fonts.googleapis.com/earlyaccess/cwtexhei.css);
+
+body {
+  font-family: '微軟正黑體', sans-serif;
+}

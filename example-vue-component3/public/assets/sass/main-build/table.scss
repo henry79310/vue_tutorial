@@ -1,0 +1,66 @@
+/*Panel Blue*/
+.panel-blue {
+   border-color: #fff;
+}
+
+.panel-blue > .panel-heading {
+   background: $base-blue;
+	 .panel-title{ color:#fff;font-size: $xs-font;text-align: center; }
+}
+.data-table-lists{
+	.table {
+		thead{
+			tr{ background: $base-lt-blue;
+				th{ color:$base-dk-gray; font-size: $xs-font;
+					text-align: center;
+				}
+
+			}
+		}
+		tbody{
+
+			tr{
+				th{
+					width: 25%;
+					background: $base-lt-blue;color:$base-dk-gray; font-size: $xs-font;}
+				td{
+					color:$base-dk-gray;
+					font-size:$xs-font -1;
+          a{ text-decoration: none;}
+					&:last-child {text-align: left;
+					}
+
+					.download-link{
+						margin:4px;
+					}
+
+				}
+				.download-times{
+					color:$base-dk-gray;
+					font-size:$xs-font -1;
+          a{ text-decoration: none;}
+					&:last-child {text-align: right;
+          }
+				}
+			
+
+			}
+		}
+	}
+  & .table-center-td {
+    tbody{
+
+			tr{
+				th{
+					width: 25%;
+					background: $base-lt-blue;color:$base-dk-gray; font-size: $xs-font;}
+				td{
+					color:$base-dk-gray;
+					font-size: $xs-font -1;
+          text-align: center;
+				}
+
+			}
+		}
+  }
+}
