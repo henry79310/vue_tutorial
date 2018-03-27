@@ -34,16 +34,25 @@
 </template>
 
 <script>
-    import { getUserAuthkey, updateUserAuthkey, validateUsertoken} from '../utils/user-login-utils'
+
 
     import axios from 'axios'
     import {axiosConfig} from '../config/axiosConfig.js'
 
     export default {
+
         data: function() {
             return {
                 userAuthkey: ''
             }
+        },
+        beforeRouteEnter(to, from, next){
+            next(vm=>{
+                console.log('here');
+            });
+        },
+        beforeRouteUpdate(to, from, next){
+            next();
         },
         computed:{
             login:function(){

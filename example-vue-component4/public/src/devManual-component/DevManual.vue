@@ -20,11 +20,14 @@
                     <!-- Begin Sidebar Menu -->
                     <dev-manual-sidebar-component v-bind:pagetype="pageType" v-on:changedevmanualpage="changeDevManualPage"></dev-manual-sidebar-component>
                     <!-- End Sidebar Menu -->
+
+                    <router-view></router-view> 
                     
-                    <keep-alive>
+                    <!-- Using keep-alive to switch components-->
+                    <!-- <keep-alive>
                         <dev-manual-description-component v-bind:is="currentView" v-bind:userloginstatus="userLoginStatus" v-on:userlogout="userLogout"></dev-manual-description-component>
                         <dev-manual-rules-component v-bind:is="currentView"></dev-manual-rules-component>
-                    </keep-alive>   
+                    </keep-alive> -->   
                     <!-- Using v-show to switch components -->
                     <!-- <dev-manual-description-component v-show="pageType == 'description'" v-bind:userloginstatus="userLoginStatus" v-on:userlogout="userLogout"></dev-manual-description-component>
                     <dev-manual-rules-component v-show="pageType == 'rules'"></dev-manual-rules-component> -->
@@ -46,9 +49,14 @@
 </template>
 <script>
 
+
+import Vue from 'vue'
+import VueRouter from 'vue-router'
+
+
 import devManualSidebarComponent from './DevManual-sidebar.vue'
 import devManualDescriptionComponent from './DevManual-description.vue'
-import devManualRulesComponent from './DevManual-rules.vue'
+import devManualRulesComponent from './DevManual-rules.vue' 
 
 import userLoginComponent from '../user-login-component/User-login.vue'
 
@@ -59,7 +67,37 @@ const pagesType = [{ type: 'description', typeName: '使用說明', viewName:'de
                  { type: 'rules', typeName: '使用規範', viewName:'dev-manual-rules-component' }];
 
 
+Vue.use(VueRouter);
+
+const devManualRouter = new VueRouter({
+    mode: 'history',
+    routes: [            
+        {   
+            path: '/devManual/description', 
+            name: 'devManualDescription',
+            component:devManualDescriptionComponent,
+            props: { userloginstatus: false }
+        },
+        {   
+            path: '/devManual/rules', 
+            name: 'devManualRules',
+            component:devManualRulesComponent,
+            props:true
+        },
+       // redirect: { path: '/devManual/description' }
+    ] 
+    
+});
+
+devManualRouter.beforeEach((to, from, next) => {
+    console.log(to);
+    next(vm=>{
+        console.log(vm);
+    });
+});
+
 export default {
+    router:devManualRouter,
     data: function(){
         return {
             pageType: '',
@@ -84,11 +122,11 @@ export default {
     },
     components: {
         'dev-manual-sidebar-component': devManualSidebarComponent,
-        'dev-manual-description-component': devManualDescriptionComponent,
-        'dev-manual-rules-component': devManualRulesComponent,
+        /*'dev-manual-description-component': devManualDescriptionComponent,
+        'dev-manual-rules-component': devManualRulesComponent,*/
         'user-login-component':userLoginComponent,
         'footer-component':footerComponent
-    },
+    }, 
     methods:{
         changeDevManualPage:function(pagetype){
             this.pageType = pagetype;

@@ -53,7 +53,7 @@ app.use(serveStatic(config.staticFileDirectory.pagePrefix));
 
 
 /** devManual router */
-app.get('/devManual/desc',function(req, res){
+app.get('/devManual/description',function(req, res){
     var cookie = req.cookies;
     res.sendFile(__dirname + '/public/content.html');
 });

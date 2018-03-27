@@ -3,10 +3,12 @@
         <ul class="list-group sidebar-nav-v1" id="sidebar-nav">
             <!-- 資料清單 -->
             <li class="list-group-item" v-bind:class="{active:pagetype === 'description'}">
-                <a href="#" v-on:click="changeDevManualPage('description')">使用說明</a>
+                <a href="/devManual/description">使用說明</a>
+                <!-- <router-link to="/devManual/description"></router-link> -->
             </li>
             <li class="list-group-item" v-bind:class="{active:pagetype === 'rules'}">
-                <a href="#" v-on:click="changeDevManualPage('rules')">使用規範</a>
+                <a href="/devManual/rules">使用規範</a>
+                <!-- <router-link to="/devManual/rules"></router-link> -->
             </li>
             <!-- End 資料清單 -->
         </ul>
