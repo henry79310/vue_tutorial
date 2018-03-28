@@ -3,12 +3,16 @@
 const express = require('express');
 const bodyParser = require('body-parser');
 const serveStatic = require('serve-static');
+
 const cookieParser = require('cookie-parser');
+ 
 const app = express();
+
 const config = require('./routes/config/config');
 
-
 const userRouter = require('./routes/user-router');
+
+
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(serveStatic(config.staticFileDirectory.webPrefix));
 app.use(cookieParser());
@@ -19,13 +23,15 @@ app.use(express.static(__dirname + '/public/'));
 app.get('/devManual/desc',function(req, res){
     var cookie = req.cookies;
     if(cookie.Authorization){
-        res.sendFile(__dirname + '/public/devManual-desc-login.html');
+        res.sendFile(__dirname + '/public/content-desc-login.html');
     }else{
-        res.sendFile(__dirname + '/public/devManual-desc.html');
-    }
-});
-app.use('/devManual/rules',express.static(__dirname + '/public/devManual-rules.html'));
+        res.sendFile(__dirname + '/public/content-desc.html');
+    } 
+    
 
+});
+
+app.use('/devManual/rules',express.static(__dirname + '/public/content-rules.html'));
 
 /** user router  */
 app.use(config.baseUrl, userRouter);

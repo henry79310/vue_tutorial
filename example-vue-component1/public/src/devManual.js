@@ -1,5 +1,6 @@
 import Vue from 'vue'
 
+import VueRouter from 'vue-router'
 
 import 'bootstrap'
 
@@ -7,12 +8,15 @@ import 'bootstrap'
 import '../assets/sass/main.scss'
 
 /** Content Component */
+
 import devManualComponent from './devManual-component/DevManual.vue'
 
 
-var content = new Vue({
+var devManual = new Vue({
     el: '#devManual',
     components:{
         'dev-manual-component':devManualComponent
+    },
+    created:function(){
     }
 });

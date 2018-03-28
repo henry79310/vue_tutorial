@@ -48,13 +48,6 @@ app.use(bodyParser.urlencoded({ extended: true }));
 app.use(serveStatic(config.staticFileDirectory.webPrefix));
 app.use(serveStatic(config.staticFileDirectory.pagePrefix));
 
-/****  template html   ***/
-app.use('/devManual/decontent-desc.html', express.static(__dirname + '/public/content-desc.html'));
-app.use('/devManual/content-rules.html', express.static(__dirname + '/public/content-rules.html'));
-
-/****  Vue component template ****/
-
-
 /** devManual router */
 app.get('/devManual/desc',function(req, res){
     var cookie = req.cookies;
@@ -66,7 +59,7 @@ app.get('/devManual/desc',function(req, res){
     } */
 });
 
-app.use('/devManual/rules',express.static(__dirname + '/public/content-rules.html'));
+app.use('/devManual/rules',express.static(__dirname + '/public/content.html'));
 
 
 /** user router  */

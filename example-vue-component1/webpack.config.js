@@ -14,9 +14,6 @@ var CopyWebpackPlugin = require('copy-webpack-plugin');
 module.exports = {
     /* 输入文件 */
     entry: {
-        footer: [
-            './public/src/footer.js'
-        ],
         devManual: [
             './public/src/devManual.js'
         ]
@@ -63,15 +60,7 @@ module.exports = {
                             loader:'resolve-url-loader'
                         },
                         {
-                            loader: "sass-loader",
-                            //options:{
-                                //sourceMap:true,
-                                //outputStyle: 'compressed',
-                                //includePaths: [ 
-                                    //path.resolve(__dirname, '../node_modules'),
-                                    //path.resolve(__dirname, '/public/assets/sass')
-                                //]
-                            //}
+                            loader: "sass-loader"
                     }],
                     // 在开发环境使用 style-loader
                     //fallback: "style-loader"
@@ -102,7 +91,6 @@ module.exports = {
         }
     },
     plugins: [
-        new UglifyJSPlugin(),
         new CleanWebpackPlugin(['public/dist']),
         new HtmlWebpackPlugin({
             filename: 'content.html',
@@ -129,21 +117,6 @@ module.exports = {
                 from: 'public/assets/plugins/open-icons/', 
                 to: 'plugins/open-icons',
                 toType: 'dir' 
-            },
-            { 
-                from: 'public/assets/plugins/parallax/', 
-                to: 'plugins/parallax',
-                toType: 'dir' 
-            },
-            { 
-                from: 'public/assets/plugins/html5shiv.js', 
-                to: 'plugins/html5shiv.js',
-                toType: 'file' 
-            },
-            { 
-                from: 'public/assets/plugins/respond.js', 
-                to: 'plugins/respond.js',
-                toType: 'file' 
             }
             
           ]),

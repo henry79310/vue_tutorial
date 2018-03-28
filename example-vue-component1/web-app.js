@@ -29,7 +29,7 @@ app.get('/devManual/desc',function(req, res){
     }
 });
 
-app.use('/devManual/rules',express.static(__dirname + '/public/content-rules.html'));
+app.use('/devManual/rules',express.static(__dirname + '/public/content.html'));
 
 
 /** user router  */

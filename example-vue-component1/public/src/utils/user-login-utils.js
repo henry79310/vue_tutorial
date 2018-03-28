@@ -6,12 +6,11 @@ import {axiosConfig} from '../config/axiosConfig.js'
 import {USER_TOKEN_KEY, ajaxURL} from '../config/config.js'
 
 
-export function userLogin(userid, password,recaptchaToken){
+export function userLogin(userid, password){
     return axios.post('/user/login/',
                     {  
                         userid:userid, 
-                        password:password,
-                        recaptchaToken:recaptchaToken
+                        password:password
                     },
                     axiosConfig);
 }

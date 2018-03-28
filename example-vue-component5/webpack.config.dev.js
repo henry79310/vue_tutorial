@@ -16,10 +16,6 @@ var hotMiddlewareScript = 'webpack-hot-middleware/client?reload=true';
 module.exports = {
     /* 输入文件 */
     entry: {
-        footer: [
-            './public/src/footer.js',
-            hotMiddlewareScript
-        ],
         devManual: [
             './public/src/devManual.js',
             hotMiddlewareScript

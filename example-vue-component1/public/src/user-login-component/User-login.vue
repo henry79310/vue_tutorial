@@ -35,7 +35,7 @@
                                     </section>
             
                                     <section>
-                                        <label v-if="errLogin" style="color:red">{{errMsg}}</label>
+                                        <label style="color:red"></label>
                                         <div class="row mrgbtn20">
                                             <div class="col-md-12 xs-mrgbtn20"><button type="button" class="btn-u btn-u-red btn-block rounded-2x" v-on:click="userLogin" v-bind:disabled="validating">登入</button></div>
                                         </div>
@@ -50,19 +50,16 @@
 </template>
 <script>
 
-import {loginStore} from '../vuex-store/login-vuex.js'
 import {userLogin, setUsertoken} from '../utils/user-login-utils.js'
-import {SHOW_ACCOUNT_OR_PASSWORD_EMPTY_MSG,SHOW_ACCOUNT_OR_PASSWORD_ERROR_MSG,} from '../config/config.js'
+
+import axios from 'axios'
+import {axiosConfig} from '../config/axiosConfig.js'
 
 export default {
-    store:loginStore,
-    props: ['userloginstatus'],
     data: function() {
         return {
             userid: null,
             password: null,
-            errLogin: false,
-            errMsg:'',
             validating:false
         }
 
@@ -71,32 +68,18 @@ export default {
         userLogin: function() {
             if (this.userid != null && this.password != null) {
                 this.validating = true;
-                userLogin(this.userid,this.password).then((response)=>{
-                    this.validating = false;
-                    var msg = response.data;
-                    msg = validateJsonObj(msg);
-                    if(msg != null && msg.success){ 
-                        var token = msg.data
-                        setUsertoken(this, token);
-                        this.$refs.closeLoginPage.click();
-                    }else{
-                        this.errLogin = true;
-                        this.errMsg = SHOW_ACCOUNT_OR_PASSWORD_ERROR_MSG;
-                            
-                    }
+                axios.post('/userLogin/',{  
+                    userid:this.userid, 
+                    password:this.password
+                },axiosConfig)
+                .then((response)=>{
+                    this.validating = true;
+                    this.$emit('userlogin',true);
+                    this.$refs.closeLoginPage.click();
                 }).catch(err=>{
                 });
-
-              
-            }else{
-                this.validating = false;
-                this.errLogin = true;
-                this.errMsg = SHOW_ACCOUNT_OR_PASSWORD_EMPTY_MSG;
             }
         }
     }
 }
-
-
-
 </script>
