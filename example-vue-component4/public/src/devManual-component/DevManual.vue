@@ -74,26 +74,24 @@ const devManualRouter = new VueRouter({
     routes: [            
         {   
             path: '/devManual/description', 
-            name: 'devManualDescription',
+            name: 'description',
             component:devManualDescriptionComponent,
             props: { userloginstatus: false }
         },
         {   
             path: '/devManual/rules', 
-            name: 'devManualRules',
+            name: 'rules',
             component:devManualRulesComponent,
             props:true
-        },
-       // redirect: { path: '/devManual/description' }
+        }
     ] 
-    
 });
 
+
+
 devManualRouter.beforeEach((to, from, next) => {
-    console.log(to);
-    next(vm=>{
-        console.log(vm);
-    });
+    /* console.log(to); */
+    next();
 });
 
 export default {
@@ -138,11 +136,23 @@ export default {
             this.userLoginStatus = false;
         }
     },
+    watch:{
+      $route:function(){
+        /* console.log(this.$route); */
+        this.pageType = this.$route.name;
+      }  
+    },
     created:function(){
-        this.pageType = 'description';
+
+       // this.pageType = 'description';
+        this.pageType = this.$route.name;
+
         if(document.cookie){
             this.userLoginStatus = true;
         }
     }
 }
 </script>
+
+
+

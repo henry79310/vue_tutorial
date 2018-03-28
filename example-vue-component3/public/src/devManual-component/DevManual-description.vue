@@ -70,7 +70,7 @@
 
                 axios.get('/userLogout',axiosConfig)
                 .then(function(response){
-                    vm.$emit('userlogout');
+                    /* vm.$emit('userlogout'); */
                     vm.$store.dispatch({
                         type:'changeUserLoginState',
                         usertoken: null

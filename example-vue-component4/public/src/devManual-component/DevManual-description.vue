@@ -47,11 +47,13 @@
             }
         },
         beforeRouteEnter(to, from, next){
-            next(vm=>{
-                console.log('here');
+            next(vm=>{ 
+                /* console.log(to);
+                console.log('desc router enter'); */
             });
         },
         beforeRouteUpdate(to, from, next){
+            /* console.log('desc router update'); */
             next();
         },
         computed:{
