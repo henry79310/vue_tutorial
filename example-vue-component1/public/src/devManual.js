@@ -8,8 +8,7 @@ import 'bootstrap'
 import '../assets/sass/main.scss'
 
 /** Content Component */
-
-import devManualComponent from './devManual-component/DevManual.vue'
+import devManualComponent from './devManual-component/DevManual.vue' 
 
 
 var devManual = new Vue({
@@ -18,5 +17,6 @@ var devManual = new Vue({
         'dev-manual-component':devManualComponent
     },
     created:function(){
+        console.log(this);
     }
 });

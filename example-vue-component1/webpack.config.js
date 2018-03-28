@@ -25,7 +25,7 @@ module.exports = {
         /* publicPath -> add path to url prefix*/
         //publicPath: '../public/dist/',
         /* 文件名 */
-        filename: 'js/[name].[chunkhash:8].js',
+        filename: 'js/[name].js',
         publicPath: '/dist/'
     },
     module: {
