@@ -1,11 +1,10 @@
 ## Vue2 Tutorial For IISI(CWB)
 
 ### Prerequisities
-> nodejs & npm 
+> nodejs & npm & webpack
 
 ### Global Installing 
 ``` npm install package.json```
-> Global Install webpack
 
 
 ### Running the tests
