@@ -14,10 +14,10 @@
 ``` node web-app.js ```
 
 #### example-vue2 ~ example-vue6
-``` cd 'project folder' ```  
-``` npm install ```
-``` webpack ```
-``` npm test ```
+> ``` cd 'project folder' ```  
+> ``` npm install ```
+> ``` webpack ```
+> ``` npm test ```
 
  
 
