@@ -9,11 +9,12 @@
 
 ### Running the tests
 
-#### example-html & example-vue1 
+#### In example-html & example-vue1 
 ``` cd 'project folder' ```  
+
 ``` node web-app.js ```
 
-#### example-vue2 ~ example-vue6
+#### In example-vue2 ~ example-vue6
 ``` cd 'project folder' ```  
 
 ``` npm install package.json```
