@@ -1,19 +1,23 @@
 ## Vue2 Tutorial For IISI(CWB)
 
 ### Prerequisities
-> nodejs & npm
+> nodejs & npm 
 
-### Installing
-> npm install 
+### Global Installing 
+``` npm install ```
+
 
 ### Running the tests
-#### example-html & example-vue1   
-> node web-app.js
+
+#### example-html & example-vue1 
+``` cd 'project folder' ```  
+``` node web-app.js ```
 
 #### example-vue2 ~ example-vue6
-> npm install
-> webpack
-> npm test
+``` cd 'project folder' ```  
+``` npm install ```
+``` webpack ```
+``` npm test ```
 
  
 
