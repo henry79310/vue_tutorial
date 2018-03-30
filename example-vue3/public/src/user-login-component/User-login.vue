@@ -35,9 +35,9 @@
                                     </section>
             
                                     <section>
-                                        <label v-if="errLogin" style="color:red">{{errMsg}}</label>
+                                        <label  style="color:red"></label>
                                         <div class="row mrgbtn20">
-                                            <div class="col-md-12 xs-mrgbtn20"><button type="button" class="btn-u btn-u-red btn-block rounded-2x" v-on:click="userLogin" v-bind:disabled="validating">登入</button></div>
+                                            <div class="col-md-12 xs-mrgbtn20"><button type="button" class="btn-u btn-u-red btn-block rounded-2x" v-on:click="userLogin">登入</button></div>
                                         </div>
                                     </section>
                             </fieldset>
@@ -50,7 +50,6 @@
 </template>
 <script>
 
-import {userLogin, setUsertoken} from '../utils/user-login-utils.js'
 
 import axios from 'axios'
 import {axiosConfig} from '../config/axiosConfig.js'
@@ -60,23 +59,18 @@ export default {
         return {
             userid: null,
             password: null,
-            errLogin: false,
-            errMsg:'',
-            validating:false
         }
 
     },
     methods: {
         userLogin: function() {
             if (this.userid != null && this.password != null) {
-                this.validating = true;
                 axios.post('/userLogin/',{  
                     userid:this.userid, 
                     password:this.password
                 },axiosConfig)
                 .then((response)=>{
-                    this.validating = true;
-                    this.$emit('userlogin',true);
+                    this.$emit('userLoginChild',true);
                     this.$refs.closeLoginPage.click();
                 }).catch(err=>{
                 });

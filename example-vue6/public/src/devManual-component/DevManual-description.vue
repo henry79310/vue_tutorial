@@ -16,9 +16,9 @@
                 
                 <h4 class="idet">1.授權碼取得</h4>
 
-                <p class="idet2 isnot-login" v-if="!userloginstatus"><a href="#" data-toggle="modal" data-target="#userLogin"><i class="fa fa-external-link" aria-hidden="true"></i>「您的授權碼需登入會員後始可取得」</a></p>
-                <p class="idet2 loged-in" v-if="userloginstatus">
-                    <div class="idet2"  v-if="userloginstatus">
+                <p class="idet2 isnot-login" v-if="!userLoginStatus"><a href="#" data-toggle="modal" data-target="#userLogin"><i class="fa fa-external-link" aria-hidden="true"></i>「您的授權碼需登入會員後始可取得」</a></p>
+                <p class="idet2 loged-in" v-if="userLoginStatus">
+                    <div class="idet2"  v-if="userLoginStatus">
                         <a href="#getUserAuthkeyAnchor" class="btn-u btn-u-blue rounded" v-on:click="getUserAuthkey">授權碼取得</a> 
                         <a href="#getUserAuthkeyAnchor" class="btn-u btn-u-blue rounded" v-on:click="logout">LOGOUT</a>
                         <a class="idet2" style='color:red;font-size:20px;pointer-events:none'>{{userAuthkey}}</a>
@@ -57,12 +57,12 @@
             next();
         },
         computed:{
-            userloginstatus:function(){
+            userLoginStatus:function(){
                 return this.$store.getters.login;
             }
         },/* 
         props:{
-            userloginstatus:{
+            userLoginStatusChild:{
                 type:Boolean,
                 required:true
             }

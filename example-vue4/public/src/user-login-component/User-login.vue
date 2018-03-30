@@ -35,9 +35,9 @@
                                     </section>
             
                                     <section>
-                                        <label v-if="errLogin" style="color:red">{{errMsg}}</label>
+                                        <label style="color:red"></label>
                                         <div class="row mrgbtn20">
-                                            <div class="col-md-12 xs-mrgbtn20"><button type="button" class="btn-u btn-u-red btn-block rounded-2x" v-on:click="userLogin" v-bind:disabled="validating">登入</button></div>
+                                            <div class="col-md-12 xs-mrgbtn20"><button type="button" class="btn-u btn-u-red btn-block rounded-2x" v-on:click="userLogin">登入</button></div>
                                         </div>
                                     </section>
                             </fieldset>
@@ -58,10 +58,7 @@ export default {
     data: function() {
         return {
             userid: null,
-            password: null,
-            errLogin: false,
-            errMsg:'',
-            validating:false
+            password: null
         }
 
     },
@@ -69,7 +66,6 @@ export default {
         userLogin: function() {
             if (this.userid != null && this.password != null) {
                 var vm = this;
-                this.validating = true;
                 axios.post('/userLogin/',{  
                     userid:this.userid, 
                     password:this.password

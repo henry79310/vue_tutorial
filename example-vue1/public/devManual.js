@@ -11,7 +11,40 @@ function getAuthkey(){
     });
 }
 
-/* var footerVue = new Vue({
+
+
+var testVue = new Vue({
+    el:'#test',
+    data:{
+        test:'test123'
+    },
+    computed:{
+        computedTest:function(){
+            return this.test + ' computed.';
+        }
+    },
+    methods:{
+        changeDataValue:function(){
+            this.test = 'test 456';
+        }
+    },
+    watch:{
+        test:function(){
+            console.log('the test data be changed.');
+        }
+    },
+    updated:function(){
+        console.log('some data be updated.');
+    },
+    mounted:function(){
+        console.log('testVue Object be mounted.');
+    },
+    created:function(){
+        console.log('testVue Object be created.');
+    }
+
+});
+var footerVue = new Vue({
     el: '#footer',
     components:{
         'footer-component':{
@@ -41,15 +74,11 @@ function getAuthkey(){
                         </div>
                     </footer>`
             }
-    },
-    created:function(){
-        console.log(this);
     }
-});  */
+}); 
 
 
-
-/* var loginVue = new Vue({
+var loginVue = new Vue({
     el:'#login',
     components:{
         'login-component':{
@@ -105,4 +134,4 @@ function getAuthkey(){
                     </div>`
         }
     }
-}); */
+});

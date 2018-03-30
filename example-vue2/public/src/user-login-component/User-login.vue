@@ -50,7 +50,6 @@
 </template>
 <script>
 
-import {userLogin, setUsertoken} from '../utils/user-login-utils.js'
 
 import axios from 'axios'
 import {axiosConfig} from '../config/axiosConfig.js'

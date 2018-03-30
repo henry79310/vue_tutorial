@@ -1,7 +1,5 @@
 import Vue from 'vue'
 
-import VueRouter from 'vue-router'
-
 import 'bootstrap'
 
 // for webpack to pack scss
@@ -15,8 +13,8 @@ var devManual = new Vue({
     el: '#devManual',
     components:{
         'dev-manual-component':devManualComponent
-    },
+    }/* ,
     created:function(){
         console.log(this);
-    }
+    } */
 });

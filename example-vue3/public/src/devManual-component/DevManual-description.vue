@@ -16,9 +16,9 @@
                 
                 <h4 class="idet">1.授權碼取得</h4>
 
-                <p class="idet2 isnot-login" v-if="!userloginstatus"><a href="#" data-toggle="modal" data-target="#userLogin"><i class="fa fa-external-link" aria-hidden="true"></i>「您的授權碼需登入會員後始可取得」</a></p>
-                <p class="idet2 loged-in" v-if="userloginstatus">
-                    <div class="idet2"  v-if="userloginstatus">
+                <p class="idet2 isnot-login" v-if="!userLoginStatusChild"><a href="#" data-toggle="modal" data-target="#userLogin"><i class="fa fa-external-link" aria-hidden="true"></i>「您的授權碼需登入會員後始可取得」</a></p>
+                <p class="idet2 loged-in" v-if="userLoginStatusChild">
+                    <div class="idet2"  v-if="userLoginStatusChild">
                         <a href="#getUserAuthkeyAnchor" class="btn-u btn-u-blue rounded" v-on:click="getUserAuthkey">授權碼取得</a> 
                         <a href="#getUserAuthkeyAnchor" class="btn-u btn-u-blue rounded" v-on:click="logout">LOGOUT</a>
                         <a class="idet2" style='color:red;font-size:20px;pointer-events:none'>{{userAuthkey}}</a>
@@ -34,25 +34,17 @@
 </template>
 
 <script>
-    import { getUserAuthkey, updateUserAuthkey, validateUsertoken} from '../utils/user-login-utils'
 
     import axios from 'axios'
     import {axiosConfig} from '../config/axiosConfig.js'
-
     export default {
         data: function() {
             return {
                 userAuthkey: ''
             }
         },
-        computed:{
-            login:function(){
-                /* return this.$store.getters['login/login']; */
-                return false;
-            }
-        },
         props:{
-            userloginstatus:{
+            userLoginStatusChild:{
                 type:Boolean,
                 required:true
             }
@@ -73,7 +65,7 @@
                 var vm = this;
                 axios.get('/userLogout',axiosConfig)
                 .then(function(response){
-                    vm.$emit('userlogout');
+                    vm.$emit('userLogoutChild');
                 }); 
              
             }

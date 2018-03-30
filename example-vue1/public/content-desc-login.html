@@ -79,14 +79,10 @@
                                 <p class="idet2 loged-in">
                                     <div class="idet2">
                                         <a href="#getUserAuthkeyAnchor" class="btn-u btn-u-blue rounded"onclick="getAuthkey()">授權碼取得</a> 
+                                        <a href="/webapi/userLogout" class="btn-u btn-u-blue rounded">LOGOUT</a> 
                                         <a class="idet2" style='color:red;font-size:20px;pointer-events:none' id="getUAuthkey" ></a>
                                     </div>
-                                </p>        
-                                <p class="idet2 loged-in">
-                                    <div class="idet2">
-                                        <a href="/webapi/userLogout" class="btn-u btn-u-blue rounded">LOGOUT</a> 
-                                    </div>
-                                </p>                        
+                                </p>                           
                                 <p>※請留意若某一電子郵件已註冊過氣象會員，再以相同郵件帳號透過facebook登入本平臺，將會取得相同之授權碼，若點選上方更新授權碼也會同步影響兩種登入方式可取得之授權碼。</p>
                 
                                 
@@ -130,19 +126,8 @@
     <!-- JS Global Compulsory -->
     <script type="text/javascript" src="/assets/plugins/jquery/jquery.min.js"></script>
     <script type="text/javascript" src="/assets/plugins/bootstrap/js/bootstrap.min.js"></script>
-    <!-- JS Customization -->
-    <!-- <script src="/dist/content.js"></script> -->
-    <script type="text/javascript">
-        /*document.getElementById("Line_mobile_Btn").onclick = function() {
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                         }*/
-    </script>
+    <script type="text/javascript" src="/assets/plugins/vue/vue.js"></script>
 
-
-    <!--[if lt IE 9]>
-    <script src="/assets/plugins/respond.js"></script>
-    <script src="/assets/plugins/html5shiv.js"></script>
-    <script src="/assets/plugins/placeholder-IE-fixes.js"></script>
-<![endif]-->
     <!-- JS For Develop -->
     <script src="/devManual.js"></script>
 </body>

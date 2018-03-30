@@ -18,18 +18,18 @@
             <div class="container">
                 <div class="row">
                     <!-- Begin Sidebar Menu -->
-                    <dev-manual-sidebar-component v-bind:pagetype="pageType" v-on:changedevmanualpage="changeDevManualPage"></dev-manual-sidebar-component>
+                    <dev-manual-sidebar-component v-bind:pageTypeChild="pageType" v-on:changeDevManualPageChild="changeDevManualPage"></dev-manual-sidebar-component>
                     <!-- End Sidebar Menu -->
 
                     <router-view></router-view> 
                     
                     <!-- Using keep-alive to switch components-->
                     <!-- <keep-alive>
-                        <dev-manual-description-component v-bind:is="currentView" v-bind:userloginstatus="userLoginStatus" v-on:userlogout="userLogout"></dev-manual-description-component>
+                        <dev-manual-description-component v-bind:is="currentView" v-bind:userLoginStatusChild="userLoginStatus" v-on:userLogoutChild="userLogout"></dev-manual-description-component>
                         <dev-manual-rules-component v-bind:is="currentView"></dev-manual-rules-component>
                     </keep-alive> -->   
                     <!-- Using v-show to switch components -->
-                    <!-- <dev-manual-description-component v-show="pageType == 'description'" v-bind:userloginstatus="userLoginStatus" v-on:userlogout="userLogout"></dev-manual-description-component>
+                    <!-- <dev-manual-description-component v-show="pageType == 'description'" v-bind:userLoginStatusChild="userLoginStatus" v-on:userLogoutChild="userLogout"></dev-manual-description-component>
                     <dev-manual-rules-component v-show="pageType == 'rules'"></dev-manual-rules-component> -->
                 </div>
             </div>
@@ -76,7 +76,7 @@ const devManualRouter = new VueRouter({
             path: '/devManual/description', 
             name: 'description',
             component:devManualDescriptionComponent,
-            props: { userloginstatus: false }
+            props: { userLoginStatusChild: false }
         },
         {   
             path: '/devManual/rules', 
@@ -90,8 +90,12 @@ const devManualRouter = new VueRouter({
 
 
 devManualRouter.beforeEach((to, from, next) => {
-    /* console.log(to); */
+    console.log('beforeEach');
     next();
+});
+
+devManualRouter.afterEach((to, from) => {
+    console.log('afterEach'); 
 });
 
 export default {
@@ -138,18 +142,17 @@ export default {
     },
     watch:{
       $route:function(){
-        /* console.log(this.$route); */
         this.pageType = this.$route.name;
       }  
     },
-    created:function(){
+    created:function(){       
 
-       // this.pageType = 'description';
         this.pageType = this.$route.name;
 
         if(document.cookie){
             this.userLoginStatus = true;
         }
+        console.log('DevManual Component created.');
     }
 }
 </script>

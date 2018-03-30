@@ -1,12 +1,9 @@
 {
-    "name": "opendata.cwb.gov.tw",
+    "name": "vue2",
     "version": "1.0.0",
-    "description": "OpendataWeb",
+    "description": "vue2",
     "main": "web-app.js",
-    "scripts": {
-        "test": "cross-env NODE_ENV=dev supervisor -i client web-app.dev.js",
-        "start": "pm2 startOrReload ecosystem.config.js"
-    },
+    "scripts": {},
     "dependencies": {
         "axios": "^0.17.1",
         "bluebird": "^3.5.0",
@@ -30,7 +27,6 @@
         "babel-core": "^6.26.0",
         "babel-loader": "^7.1.2",
         "babel-preset-env": "^1.6.1 ",
-        "cross-env": "^5.1.3",
         "css-loader": "^0.28.5",
         "extract-text-webpack-plugin": "^3.0.1",
         "file-loader": "^0.11.2",
@@ -57,7 +53,7 @@
         "style-ext-html-webpack-plugin": "^3.4.7",
         "es6-promise": "^4.2.4",
         "babel-polyfill": "^6.26.0",
-        "supervisor": "^0.12.0"
+        "cookie-parser": "^1.4.3"
     },
     "keywords": [
         "npm",
