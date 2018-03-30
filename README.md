@@ -5,6 +5,7 @@
 
 ### Global Installing 
 ``` npm install package.json```
+> Global Install webpack
 
 
 ### Running the tests
@@ -18,7 +19,7 @@
 
 ``` npm install package.json```
 
-``` webpack ```
+``` webpack  --config webpack.config.js ```
 
 ``` npm test ```
 
